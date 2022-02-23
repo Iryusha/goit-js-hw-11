@@ -72,8 +72,8 @@ var t=arguments[3];function e(t){return(e="function"==typeof Symbol&&"symbol"==t
 },{}],"kz9M":[function(require,module,exports) {
 
 },{}],"Vn01":[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.getSearchImg=void 0;var e=t(require("axios"));function t(e){return e&&e.__esModule?e:{default:e}}const o="https://pixabay.com/api/",a="25810966-6fb22a4db6c9a757ebd742847";let n=1;const r=()=>e.default.get(`${o}?key=${a}&page=${n}&per_page=40`);function i(e){return 1===e.length?e.map(e=>countryTemplate(e)).join(""):e.length>=2&&e.length<=10?e.map(e=>countryMinTemplate(e)).join(""):(Notiflix.Notify.info("Too many matches found. Please enter a more specific name."),"")}exports.getSearchImg=r;
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.getSearchImg=void 0;var e=t(require("axios"));function t(e){return e&&e.__esModule?e:{default:e}}const a="https://pixabay.com/api/",r="25810966-6fb22a4db6c9a757ebd742847";let o=1;const s=()=>e.default.get(`${a}?key=${r}&page=${o}&per_page=40`);exports.getSearchImg=s;
 },{"axios":"dZBD"}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss");var e=s(require("notiflix")),r=s(require("axios")),t=s(require("simplelightbox"));require("simplelightbox/dist/simple-lightbox.min.css");var i=require("./js/images");function s(e){return e&&e.__esModule?e:{default:e}}const o=document.querySelector("#search-form"),n=document.querySelector(".gallery"),l=document.querySelector(".load-more");function u(e){e.preventDefault(),console.log(o.searchQuery.value)}function a(e){console.log(e.target.value)}o.addEventListener("submit",u),o.addEventListener("input",a),(0,i.getSearchImg)().then(({data:e})=>{const r=e.hits[2],t=imagesCardTemplate(r);n.innerHTML=t,console.log(t)});
 },{"./sass/main.scss":"clu1","notiflix":"W3Ap","axios":"dZBD","simplelightbox":"yx6k","simplelightbox/dist/simple-lightbox.min.css":"kz9M","./js/images":"Vn01"}]},{},["Focm"], null)
-//# sourceMappingURL=/goit-js-hw-11/src.b72eff07.js.map
+//# sourceMappingURL=/goit-js-hw-11/src.2f6ff182.js.map
