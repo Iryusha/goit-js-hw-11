@@ -4,7 +4,8 @@ import axios from 'axios';
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 import { getSearchImg } from './js/images';
-// import imagesCardTemplate from './js/components.hbs';
+
+
 
 const searchFormEl = document.querySelector('#search-form');
 const galleryEl = document.querySelector('.gallery');
