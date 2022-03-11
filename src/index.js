@@ -23,7 +23,7 @@ getSearchImg().then(console.log);
 
   // galleryEl.innerHTML = firstImageTamplate;
 
-  console.log(firstImageTamplate);
+  // console.log(firstImageTamplate);
 // });
 
 function onSearchBtn(e) {
