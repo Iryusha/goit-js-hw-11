@@ -4,6 +4,7 @@ import axios from 'axios';
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 import { getSearchImg } from './js/API/images';
+import imagesCardTemplate from './js/components/imagesCard.hbs';
 
 
 
