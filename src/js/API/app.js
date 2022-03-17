@@ -2,8 +2,8 @@ import  apiService from './images';
 import compiledTemplate from '../components/imageCard.hbs';
 import Notiflix from 'notiflix';
 import SimpleLightbox from 'simplelightbox';
-import 'simplelightbox/dist/simple-lightbox.min.css';
-import Pagination from 'tui-pagination';
+// import 'simplelightbox/dist/simple-lightbox.min.css';
+// import Pagination from 'tui-pagination';
 // import 'tui-pagination/dist/tui-pagination.css';
 
 const refs = {
