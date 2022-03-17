@@ -10,7 +10,7 @@ const refs = {
   searchForm: document.querySelector('.search-form'),
   containerGallery: document.querySelector('.gallery'),
   loadMore: document.querySelector('.load-more'),
-  anchor: document.querySelector('.anchor'),
+//   anchor: document.querySelector('.anchor'),
   container: document.getElementById('tui-pagination-container'),
 };
 
@@ -28,7 +28,7 @@ function onSearch(event) {
   newApiService.searchName = event.currentTarget.elements.searchQuery.value.trim();
   newApiService.resetPage();
   newApiService.fetchArticles().then(({ hits, totalHits }) => {
-    addClassAnchor();
+    // addClassAnchor();
     if (newApiService.searchName === '') {
       Notiflix.Notify.failure('Oops... Please enter the text');
     } else if (hits.length === 0) {
@@ -42,7 +42,7 @@ function onSearch(event) {
     clearGallery();
     addArticles(hits);
     lightbox.refresh();
-    addPagination(totalHits);
+    // addPagination(totalHits);
   });
 }
 
@@ -72,42 +72,42 @@ function lowScrollForBtnLoadMore() {
   });
 }
 
-function addClassAnchor() {
-  refs.anchor.classList.add('is-hidden');
-}
+// function addClassAnchor() {
+//   refs.anchor.classList.add('is-hidden');
+// }
 
-function removeClassAnchor() {
-  refs.anchor.classList.remove('is-hidden');
-}
+// function removeClassAnchor() {
+//   refs.anchor.classList.remove('is-hidden');
+// }
 
-function handleAnchorClick() {
-  refs.searchForm.scrollIntoView({ block: 'center', behavior: 'smooth' });
-}
+// function handleAnchorClick() {
+//   refs.searchForm.scrollIntoView({ block: 'center', behavior: 'smooth' });
+// }
 
-function addPagination(totalHits) {
-  const pagination = new Pagination(refs.container, {
-    totalItems: 100,
-    itemsPerPage: 10,
-    visiblePages: 5,
-    page: 1,
-  });
-  pagination.setTotalItems(totalHits);
-  pagination.setItemsPerPage(40);
-  pagination.on('afterMove', event => {
-    const currentPage = event.page;
-    newApiService
-      .fetchArticles(currentPage)
-      .then(({ hits, totalHits }) => {
-        addArticles(hits);
-        lowScrollForBtnLoadMore();
-        lightbox.refresh();
-        removeClassAnchor();
-      })
-      .catch(error => {
-        Notiflix.Notify.info("We're sorry, but you've reached the end of search results.");
-      });
-  });
-}
+// function addPagination(totalHits) {
+//   const pagination = new Pagination(refs.container, {
+//     totalItems: 100,
+//     itemsPerPage: 10,
+//     visiblePages: 5,
+//     page: 1,
+//   });
+//   pagination.setTotalItems(totalHits);
+//   pagination.setItemsPerPage(40);
+//   pagination.on('afterMove', event => {
+//     const currentPage = event.page;
+//     newApiService
+//       .fetchArticles(currentPage)
+//       .then(({ hits, totalHits }) => {
+//         addArticles(hits);
+//         lowScrollForBtnLoadMore();
+//         lightbox.refresh();
+//         removeClassAnchor();
+//       })
+//       .catch(error => {
+//         Notiflix.Notify.info("We're sorry, but you've reached the end of search results.");
+//       });
+//   });
+// }
 
 refs.searchForm.addEventListener('submit', onSearch);
-refs.anchor.addEventListener('click', handleAnchorClick);
+// refs.anchor.addEventListener('click', handleAnchorClick);
