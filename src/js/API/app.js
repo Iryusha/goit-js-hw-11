@@ -109,5 +109,5 @@ function lowScrollForBtnLoadMore() {
 //   });
 // }
 
-refs.searchForm.addEventListener('submit', onSearch);
+// refs.searchForm.addEventListener('submit', onSearch);
 // refs.anchor.addEventListener('click', handleAnchorClick);
