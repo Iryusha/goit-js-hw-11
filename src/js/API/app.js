@@ -1,5 +1,5 @@
-import  apiService from './js/API/images';
-import compiledTemplate from './js/components/imageCard.hbs';
+import  apiService from './images';
+import compiledTemplate from '../components/imageCard.hbs';
 import Notiflix from 'notiflix';
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
