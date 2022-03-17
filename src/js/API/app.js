@@ -61,16 +61,16 @@ function checkTotalHits(totalHits) {
   }
 }
 
-function lowScrollForBtnLoadMore() {
-  const { height: cardHeight } = document
-    .querySelector('.gallery')
-    .firstElementChild.getBoundingClientRect();
+// function lowScrollForBtnLoadMore() {
+//   const { height: cardHeight } = document
+//     .querySelector('.gallery')
+//     .firstElementChild.getBoundingClientRect();
 
-  window.scrollBy({
-    top: cardHeight * 0.8,
-    behavior: 'smooth',
-  });
-}
+//   window.scrollBy({
+//     top: cardHeight * 0.8,
+//     behavior: 'smooth',
+//   });
+// }
 
 // function addClassAnchor() {
 //   refs.anchor.classList.add('is-hidden');
