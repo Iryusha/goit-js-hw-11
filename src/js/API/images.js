@@ -1,23 +1,41 @@
-export function fetchCountries (name) {
-  let page = 1;
-  let limit = 40;
+import axios from 'axios/dist/axios.min.js';
+const API_KEY = '25546226-16034f7c6795ec18e54b1dcda';
+const BASE_URL = 'https://pixabay.com/api/';
 
-  const params = new URLSearchParams({
-    page: page,
-    per_page: limit,
-  });
+export default class apiService {
+  constructor() {
+    this.name = '';
+    this.API_KEY = API_KEY;
+    this.BASE_URL = BASE_URL;
+    this.page = 1;
+  }
 
-  const url = `https://pixabay.com/api/?key=25798215-b5224b890c985f6c53280bcb2&q=${name}&${params}&image_type=photo&orientation=horizontal&safesearch=true`;
+  async fetchArticles(page) {
+    try {
+      const response = await axios.get(
+        `${this.BASE_URL}?key=${this.API_KEY}&q=${this.name}&image_type=photo&orientation=horizontal&safesearch=true&page=${page}&per_page=40`,
+      );
+      const articles = await response.data;
+      //   this.incrementPage();
+      return articles;
+    } catch (error) {
+      console.error(error);
+    }
+  }
 
-  return fetch(url)
-    .then(response => {
-      if (!response.ok) {
-        throw new Error(response.status);
-      }
-      return response.json();
-    })
-    .then(countries => {
-      page += 1;
-      return countries;
-    });
+  incrementPage() {
+    this.page += 1;
+  }
+
+  resetPage() {
+    this.page = 1;
+  }
+
+  get searchName() {
+    return this.name;
+  }
+
+  set searchName(newName) {
+    this.name = newName;
+  }
 }
