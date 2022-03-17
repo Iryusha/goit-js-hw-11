@@ -1,24 +1,23 @@
-import axios from 'axios';
+export function fetchCountries (name) {
+  let page = 1;
+  let limit = 40;
 
+  const params = new URLSearchParams({
+    page: page,
+    per_page: limit,
+  });
 
-const BASE_URL = 'https://pixabay.com/api/';
-const KEY = '25810966-6fb22a4db6c9a757ebd742847';
-let pageNumber = 1;
+  const url = `https://pixabay.com/api/?key=25798215-b5224b890c985f6c53280bcb2&q=${name}&${params}&image_type=photo&orientation=horizontal&safesearch=true`;
 
-export const getSearchImg = () => {
-  return axios.get(`${BASE_URL}?key=${KEY}`)
-  // return axios.get(`${BASE_URL}?key=${KEY}&page=${pageNumber}&per_page=40`);
-};
-
-
-// function createCountryList(countries) {
-//   if (countries.length === 1) {
-//     return countries.map(country => countryTemplate(country)).join('');
-//   } else if (countries.length >= 2 && countries.length <= 10) {
-//     return countries.map(country => countryMinTemplate(country)).join('');
-//   } else {
-//     Notiflix.Notify.info('Too many matches found. Please enter a more specific name.');
-//     return '';
-//   }
-// }
-
+  return fetch(url)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(response.status);
+      }
+      return response.json();
+    })
+    .then(countries => {
+      page += 1;
+      return countries;
+    });
+}
