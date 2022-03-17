@@ -18,8 +18,9 @@ input {
   border-bottom-left-radius: 5px;
   border: none;
   outline: none;
-  background-color: rgba(82, 83, 87, 0.747);
-  color: rgba(224, 222, 222, 0.966);
+  // background-color: rgba(82, 83, 87, 0.747);
+  color: black;
+  margin-right: 10px;
 }
 
 ::placeholder {
@@ -39,13 +40,14 @@ b {
   justify-content: center;
   align-items: center;
   height: 50px;
-  background-color: rgb(98, 99, 110);
+  background-color: rgb(15, 27, 156);
 
   &__btn {
     border: none;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
     padding: 5px;
+
     cursor: pointer;
     background-color: rgb(180, 182, 199);
   }
@@ -59,14 +61,14 @@ b {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  margin-right: -10px;
+  // margin-right: -10px;
   // background-color: rgb(52, 54, 145);
 }
 
 .photo-card {
   margin: 10px 10px 10px 0;
-  margin-right: 10px;
-  margin-bottom: 10px;
+  // margin-right: 10px;
+  // margin-bottom: 10px;
 
   &__image {
     border-top-left-radius: 5px;
@@ -75,7 +77,7 @@ b {
 }
 
 .info {
-  background-color: rgb(227, 237, 253);
+  background-color: rgb(91, 234, 247);
   display: flex;
   justify-content: center;
   box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.2);
@@ -84,12 +86,12 @@ b {
 }
 
 .info-item {
-  font-family: 'Arial';
+  font-family: 'sens';
   font-size: 14px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-right: 10px;
+  margin: 10px;
 }
 
 .result {
@@ -110,16 +112,16 @@ b {
   height: 20px;
 }
 
-.anchor {
-  margin-left: 20px;
-  font-size: 50px;
-  text-decoration: none;
-  cursor: pointer;
-  position: fixed;
-  bottom: 10px;
-  right: 10px;
-}
+// .anchor {
+//   margin-left: 20px;
+//   font-size: 50px;
+//   text-decoration: none;
+//   cursor: pointer;
+//   position: fixed;
+//   bottom: 10px;
+//   right: 10px;
+// }
 
-.tui-page-btn {
-  background-color: rgba(255, 255, 255, 0.932);
-}
+// .tui-page-btn {
+//   background-color: rgba(255, 255, 255, 0.932);
+// }
