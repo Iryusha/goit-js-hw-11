@@ -10,8 +10,8 @@ const refs = {
   searchForm: document.querySelector('.search-form'),
   containerGallery: document.querySelector('.gallery'),
   loadMore: document.querySelector('.load-more'),
-//   anchor: document.querySelector('.anchor'),
-  // container: document.getElementById('tui-pagination-container'),
+  // anchor: document.querySelector('.anchor'),
+  container: document.getElementById('tui-pagination-container'),
 };
 
 let lightbox = new SimpleLightbox('.gallery a', {
