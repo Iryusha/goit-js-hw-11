@@ -2,7 +2,7 @@ import  apiService from './images';
 import compiledTemplate from '../components/imageCard.hbs';
 import Notiflix from 'notiflix';
 import SimpleLightbox from 'simplelightbox';
-// import 'simplelightbox/dist/simple-lightbox.min.css';
+import 'simplelightbox/dist/simple-lightbox.min.css';
 // import Pagination from 'tui-pagination';
 // import 'tui-pagination/dist/tui-pagination.css';
 
@@ -11,7 +11,7 @@ const refs = {
   containerGallery: document.querySelector('.gallery'),
   loadMore: document.querySelector('.load-more'),
 //   anchor: document.querySelector('.anchor'),
-  container: document.getElementById('tui-pagination-container'),
+  // container: document.getElementById('tui-pagination-container'),
 };
 
 let lightbox = new SimpleLightbox('.gallery a', {
